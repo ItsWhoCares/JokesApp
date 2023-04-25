@@ -8,7 +8,7 @@ import { StatusBar } from "expo-status-bar";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
-  const [rerender, setRerender] = useState(false);
+
   const [joke, setJoke] = useState({
     error: false,
     category: "Programming",
@@ -28,7 +28,11 @@ const Home = () => {
     lang: "en",
   });
 
-  const [settings, setSettings] = useState();
+  const [settings, setSettings] = useState({
+    category: "Any",
+    type: "single",
+    search: "",
+  });
   const getSettings = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem("settings");
@@ -45,12 +49,12 @@ const Home = () => {
 
   const getJoke = async () => {
     const sett = await getSettings();
-    console.log(
-      sett,
-      `https://v2.jokeapi.dev/joke/${sett.category}?type=${sett.type}${
-        sett.search ? `&contains=${encodeURIComponent(sett.search)}` : ""
-      }}`
-    );
+    // console.log(
+    //   sett,
+    //   `https://v2.jokeapi.dev/joke/${sett.category}?type=${sett.type}${
+    //     sett.search ? `&contains=${encodeURIComponent(sett.search)}` : ""
+    //   }}`
+    // );
     if (sett) {
       setLoading(true);
       if (sett.search !== "") {

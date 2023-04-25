@@ -17,12 +17,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "foregroundImage": "./assets/iconBig.png",
+        "backgroundColor": "#000000"
+      },
+      "package": "com.whocares.jokes"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/iconBig.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a2e39343-a39b-4ef2-9a8a-e5c2279e4992"
+      }
     }
   }
 }

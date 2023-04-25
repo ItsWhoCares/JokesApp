@@ -8,7 +8,7 @@ const JokeContainer = ({ joke, loading }) => {
       <View style={styles.root}>
         <View style={styles.constainer}>
           <View style={styles.title}>
-            <Text style={styles.titleText}>{joke.category}</Text>
+            <Text style={styles.titleText}>{joke.category ?? "Loading"}</Text>
           </View>
           <View style={styles.body}>
             <Text style={styles.text}>Loading ...</Text>
