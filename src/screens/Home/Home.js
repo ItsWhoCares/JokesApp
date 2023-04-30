@@ -5,9 +5,12 @@ import myColor from "../../myColors.json";
 import { Animated } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { StatusBar } from "expo-status-bar";
+import { useNavigation } from "@react-navigation/native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
+  const navigation = useNavigation();
 
   const [joke, setJoke] = useState({
     error: false,
@@ -96,6 +99,27 @@ const Home = () => {
     //   .then((res) => res.json())
     //   .then((data) => setJoke(data));
     // getJoke();
+    navigation.setOptions({
+      headerStyle: {
+        backgroundColor: myColor.secondary,
+      },
+      headerTintColor: myColor.text,
+      headerShadowVisible: false,
+      headerTitleStyle: {
+        fontWeight: "bold",
+      },
+      headerTitleAlign: "center",
+      headerRight: () => (
+        <>
+          <Ionicons
+            onPress={() => navigation.navigate("Settings")}
+            name="settings-sharp"
+            size={24}
+            color={myColor.text}
+          />
+        </>
+      ),
+    });
   }, []);
 
   return (

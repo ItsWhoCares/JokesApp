@@ -1,15 +1,12 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import JokeContainer from "./src/components/jokeContainer";
-import { NavigationContainer } from "@react-navigation/native";
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import MyStack from "./src/components/navigation";
 import myColor from "./src/myColors.json";
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <SafeAreaView style={styles.container}>
       <MyStack />
-    </NavigationContainer>
+    </SafeAreaView>
   );
 }
 
@@ -17,8 +14,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: myColor.secondary,
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "center",
+    // justifyContent: "center",
   },
   text: {
     color: "#fff",

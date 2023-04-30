@@ -48,6 +48,19 @@ const Settings = () => {
       }
     });
   }, []);
+  useEffect(() => {
+    navigation.setOptions({
+      headerStyle: {
+        backgroundColor: myColor.secondary,
+      },
+      headerTintColor: myColor.text,
+      headerShadowVisible: false,
+      headerTitleStyle: {
+        fontWeight: "bold",
+      },
+      headerTitleAlign: "center",
+    });
+  }, []);
 
   return (
     <KeyboardAvoidingView style={styles.root}>
